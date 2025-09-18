@@ -1,21 +1,21 @@
 import React from "react";
-import logo from "../Assets/logo1.png";
+import logo from "../Assets/icons8-chat.gif";
+import logo_name from "../Assets/name_logo.png";
 import { IdCard, LogIn } from "lucide-react";
 
 function Login() {
   return (
     <>
-      <div className="h-[220px] bg-[#04a784]">
-        <div className="flex ml-[200px] pt-[40px] items-center gap-4">
-          <img src={logo} alt="logo" className="w-20 h-20" />
-          <div className="text-white uppercase tracking-widest font-serif text-2xl font-extrabold">
-            Blabber
-          </div>
+      <div className="h-[220px] bg-[#04a784] pt-10">
+        <div className="flex ml-[100px] items-center gap-4 bg-white p-4 rounded-md shadow w-fit">
+          <img src={logo} alt="logo" className="w-10 h-10 rounded-md" />
+          <img src={logo_name} alt="logo name" className="h-10" />
         </div>
       </div>
+
       <div className="bg-[#eff2f5] h-[calc(100vh-220px)] flex justify-center items-center relative">
         <div className="bg-white h-[80%] w-[50%] shadow-2xl flex flex-col  items-center justify-center absolute -top-[50px] rounded-xl">
-          <IdCard className="h-30 w-30 text-[#04a784]" strokeWidth={1.5} />
+          <IdCard className="h-30 w-30 text-[#04a784]" strokeWidth={1} />
           <div className="text-3xl">Sign In</div>
           <div className="gap-2 flex flex-col items-center justify-center pt-[75px]">
             <div className="text-xl">
