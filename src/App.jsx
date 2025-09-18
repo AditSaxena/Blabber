@@ -7,7 +7,6 @@ import Home from "./Components/Home";
 function App() {
   return (
     <>
-      <h1>Blabber</h1>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
