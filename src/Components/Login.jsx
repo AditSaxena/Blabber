@@ -1,13 +1,13 @@
 import React from "react";
 import logo from "../Assets/icons8-chat.gif";
-import logo_name from "../Assets/name_logo.png";
+import logo_name from "../Assets/name_logo_white.png";
 import { IdCard, LogIn } from "lucide-react";
 
 function Login() {
   return (
     <>
       <div className="h-[220px] bg-[#04a784] pt-10">
-        <div className="flex ml-[100px] items-center gap-4 bg-white p-4 rounded-md shadow w-fit">
+        <div className="flex ml-[100px] items-center gap-4 p-4 w-fit">
           <img src={logo} alt="logo" className="w-10 h-10 rounded-md" />
           <img src={logo_name} alt="logo name" className="h-10" />
         </div>
