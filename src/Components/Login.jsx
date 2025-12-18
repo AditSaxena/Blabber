@@ -2,8 +2,28 @@ import React from "react";
 import logo from "../Assets/icons8-chat.gif";
 import logo_name from "../Assets/name_logo_white.png";
 import { IdCard, LogIn } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { signInWithPopup } from "firebase/auth";
+import { auth } from "../../firebase.config";
+import { GoogleAuthProvider } from "firebase/auth";
+import { CreateUser } from "./CreateUser";
 
 function Login() {
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    try {
+      //login logic
+
+      const userData = await signInWithPopup(auth, new GoogleAuthProvider());
+      console.log(userData);
+      await CreateUser(userData);
+      // alert("Login");
+      navigate("/");
+    } catch (error) {
+      console.log("Login error:", error);
+    }
+  };
   return (
     <>
       <div className="h-[220px] bg-[#04a784] pt-10">
@@ -21,7 +41,10 @@ function Login() {
             <div className="text-xl">
               Sign in with your Google account to get started.
             </div>
-            <button className="bg-[#04a784] p-4 flex gap-3 items-center justify-center text-white cursor-pointer text-xl rounded-lg hover:bg-[#028166]">
+            <button
+              onClick={handleLogin}
+              className="bg-[#04a784] p-4 flex gap-3 items-center justify-center text-white cursor-pointer text-xl rounded-lg hover:bg-[#028166]"
+            >
               <div className="flex gap-2">
                 <div>Sign in with </div>
                 <div>
